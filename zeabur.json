@@ -1,0 +1,15 @@
+{
+  "$schema": "https://zeabur.com/zeabur-schema.json",
+  "name": "Chatbox Web",
+  "services": [
+    {
+      "name": "chatbox-web",
+      "type": "docker",
+      "build": {
+        "method": "dockerfile",
+        "dockerfile": "Dockerfile"
+      },
+      "port": 80
+    }
+  ]
+}
