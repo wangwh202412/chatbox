@@ -15,7 +15,7 @@ RUN pnpm run build:web
 FROM nginx:alpine
 
 RUN printf 'server {\
-    listen 80;\
+    listen 8070;\
     server_name _;\
     root /usr/share/nginx/html;\
     index index.html;\
@@ -26,6 +26,6 @@ RUN printf 'server {\
 
 COPY --from=builder /app/release/app/dist/renderer /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 8070
 
 CMD ["nginx", "-g", "daemon off;"]
